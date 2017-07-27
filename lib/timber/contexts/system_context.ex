@@ -8,13 +8,15 @@ defmodule Timber.Contexts.SystemContext do
 
   @type t :: %__MODULE__{
     hostname: String.t | nil,
-    pid: String.t | nil
+    pid: non_neg_integer | nil,
+    process_name: String.t | nil
   }
 
   @type m :: %{
     hostname: String.t | nil,
-    pid: String.t | nil
+    pid: String.t | nil,
+    process_name: String.t | nil
   }
 
-  defstruct [:hostname, :pid]
+  defstruct [:hostname, :pid, :process_name]
 end
